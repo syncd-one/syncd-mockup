@@ -16,7 +16,8 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-const Rule = ({ rule, updateRule, removeRule }) => {
+type RuleType = { rule: any; updateRule: any; removeRule: any };
+const Rule = ({ rule, updateRule, removeRule }: RuleType) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: rule.id });
 
@@ -65,7 +66,8 @@ const Rule = ({ rule, updateRule, removeRule }) => {
   );
 };
 
-const ViewSettingsModal = ({ isOpen, onClose, viewName }) => {
+type VSMType = { isOpen: any; onClose: any; viewName: any };
+const ViewSettingsModal = ({ isOpen, onClose, viewName }: VSMType) => {
   const [rules, setRules] = useState([
     {
       id: "1",
@@ -88,7 +90,7 @@ const ViewSettingsModal = ({ isOpen, onClose, viewName }) => {
     }),
   );
 
-  const handleDragEnd = (event) => {
+  const handleDragEnd = (event: any) => {
     const { active, over } = event;
     if (active.id !== over.id) {
       setRules((items) => {
@@ -102,13 +104,13 @@ const ViewSettingsModal = ({ isOpen, onClose, viewName }) => {
     }
   };
 
-  const updateRule = (id, updates) => {
+  const updateRule = (id: any, updates: any) => {
     setRules(
       rules.map((rule) => (rule.id === id ? { ...rule, ...updates } : rule)),
     );
   };
 
-  const removeRule = (id) => {
+  const removeRule = (id: any) => {
     setRules(rules.filter((rule) => rule.id !== id));
   };
 

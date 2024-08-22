@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { MoreHorizontal } from "lucide-react";
 
-const ViewsSection = ({ openModal, selectedViews, toggleView }) => {
+type VSType = { openModal: any; selectedViews: any; toggleView: any };
+const ViewsSection = ({ openModal, selectedViews, toggleView }: VSType) => {
   const views = [
     "Active Research",
     "Student Inquiries",

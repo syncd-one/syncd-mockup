@@ -10,7 +10,6 @@ import {
   Menu,
   Coffee,
   X,
-  MoreHorizontal,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -169,6 +168,16 @@ const EmailClient = () => {
               placeholder="Search emails..."
               className="w-full pl-10 pr-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+          </div>
+          <div className="flex items-center space-x-4">
+            <div className="text-right hidden md:block">
+              <p className="text-sm font-medium">Prof. John McCarthy</p>
+              <p className="text-xs text-gray-500">CS Department</p>
+            </div>
+            <Avatar className="h-10 w-10">
+              <AvatarImage src="/api/placeholder/40/40" alt="Professor" />
+              <AvatarFallback>JM</AvatarFallback>
+            </Avatar>
           </div>
         </header>
 
