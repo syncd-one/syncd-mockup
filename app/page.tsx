@@ -10,10 +10,13 @@ import {
   Menu,
   Coffee,
   X,
+  MoreHorizontal,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import EmailDetail from "@/components/EmailDetails";
+import ViewsSection from "@/components/ViewsSection";
+import ViewSettingsModal from "@/components/ViewSettingsModal";
 
 const emails = [
   {
@@ -67,9 +70,30 @@ const emails = [
 const EmailClient = () => {
   const [selectedEmail, setSelectedEmail] = useState(emails[0]);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedViews, setSelectedViews] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentView, setCurrentView] = useState("");
+
+  const toggleView = (view: any) => {
+    setSelectedViews((prev: any) =>
+      prev.includes(view)
+        ? prev.filter((v: any) => v !== view)
+        : [...prev, view],
+    );
+  };
+
+  const openModal = (view: any) => {
+    setCurrentView(view);
+    setIsModalOpen(true);
+  };
 
   return (
     <div className="flex h-screen bg-gray-100">
+      <ViewSettingsModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        viewName={currentView}
+      />
       {/* Sidebar */}
       <div
         className={`w-64 bg-gray-800 text-white p-4 transition-all duration-300 ease-in-out ${
@@ -118,6 +142,12 @@ const EmailClient = () => {
               </Button>
             </li>
           </ul>
+          {/* Views section */}
+          <ViewsSection
+            openModal={openModal}
+            selectedViews={selectedViews}
+            toggleView={toggleView}
+          />
         </nav>
       </div>
 
