@@ -10,6 +10,18 @@ import SustainabilityChallengeOG from "./emails/SustainabilityChallengeOG";
 import SustainabilityChallengeUI from "./emails/SustainabilityChallengeUI";
 import VirtualLabUI from "./emails/VirtualLabUI";
 import VirtualLabOG from "./emails/VirtualLabOG";
+import GradingCommitteeOG from "./emails/GradingCommitteeOG";
+import GradingCommitteeUI from "./emails/GradingCommitteeUI";
+import StanfordResearchOG from "./emails/StanfordResearchOG";
+import StanfordResearchUI from "./emails/StanfordResearchUI";
+import ResearchAssistantAppUI from "./emails/ResearchAssistantAppUI";
+import ResearchAssistantAppOG from "./emails/ResearchAssistantAppOG";
+import MentorshipMeetingOG from "./emails/MentorshipMeetingOG";
+import MentorshipMeetingUI from "./emails/MentorshipMeetingUI";
+import DeptBudgetMeetingOG from "./emails/DeptBudgetMeetingOG";
+import DeptBudgetMeetingUI from "./emails/DeptBudgetMeetingUI";
+import PanelDiscussionInviteOG from "./emails/PanelDiscussionInviteOG";
+import PanelDiscussionInviteUI from "./emails/PanelDiscussionInviteUI";
 
 const EmailDetail = ({ email }: { email: any }) => {
   const [selectedTab, setSelectedTab] = useState("custom");
@@ -26,6 +38,18 @@ const EmailDetail = ({ email }: { email: any }) => {
         return <SustainabilityChallengeUI />;
       case "virtual_lab":
         return <VirtualLabUI />;
+      case "grading_committee":
+        return <GradingCommitteeUI />;
+      case "stanford_research":
+        return <StanfordResearchUI />;
+      case "research_assistant_app":
+        return <ResearchAssistantAppUI />;
+      case "meeting_request":
+        return <MentorshipMeetingUI />;
+      case "dept_budget_meeting":
+        return <DeptBudgetMeetingUI />;
+      case "panel_discussion":
+        return <PanelDiscussionInviteUI />;
       default:
         return <p>Something Went Wrong.</p>;
     }
@@ -43,6 +67,18 @@ const EmailDetail = ({ email }: { email: any }) => {
         return <SustainabilityChallengeOG />;
       case "virtual_lab":
         return <VirtualLabOG />;
+      case "grading_committee":
+        return <GradingCommitteeOG />;
+      case "stanford_research":
+        return <StanfordResearchOG />;
+      case "research_assistant_app":
+        return <ResearchAssistantAppOG />;
+      case "meeting_request":
+        return <MentorshipMeetingOG />;
+      case "dept_budget_meeting":
+        return <DeptBudgetMeetingOG />;
+      case "panel_discussion":
+        return <PanelDiscussionInviteOG />;
       default:
         return <p>Something Went Wrong.</p>;
     }

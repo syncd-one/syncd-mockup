@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Mail,
   Inbox,
@@ -16,72 +16,37 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import EmailDetail from "@/components/EmailDetails";
 import ViewsSection from "@/components/ViewsSection";
 import ViewSettingsModal from "@/components/ViewSettingsModal";
-
-const emails = [
-  {
-    id: 1,
-    subject: "Request for Approval: Research Proposal",
-    sender: "Dr. Emily Smith",
-    email: "dr.smith@university.edu",
-    avatar: "/api/placeholder/32/32",
-    unread: true,
-    selected: true,
-    type: "research",
-  },
-  {
-    id: 2,
-    subject: "Urgent: Security Vulnerability in Campus Network",
-    sender: "IT Security Team",
-    email: "security@university.edu",
-    avatar: "/api/placeholder/32/32",
-    unread: true,
-    type: "security",
-  },
-  {
-    id: 3,
-    subject: "Course Feedback Results",
-    sender: "Student Experience Team",
-    email: "feedback@university.edu",
-    avatar: "/api/placeholder/32/32",
-    unread: true,
-    type: "feedback",
-  },
-  {
-    id: 4,
-    subject: "Campus Sustainability Challenge: Real-time Update",
-    sender: "Green Campus Initiative",
-    email: "sustainability@university.edu",
-    avatar: "/api/placeholder/32/32",
-    unread: true,
-    type: "sustainability",
-  },
-  {
-    id: 5,
-    subject: "Virtual Lab Experiment: Quantum Entanglement Simulation",
-    sender: "Department of Physics",
-    email: "physics.lab@university.edu",
-    avatar: "/api/placeholder/32/32",
-    unread: true,
-    type: "virtual_lab",
-  },
-];
+import { allEmails, viewCodes } from "@/lib/emails";
 
 const EmailClient = () => {
-  const [selectedEmail, setSelectedEmail] = useState(emails[0]);
+  const [selectedEmail, setSelectedEmail] = useState(allEmails[0]);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedViews, setSelectedViews] = useState([]);
+  const [selectedViews, setSelectedViews] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentView, setCurrentView] = useState("");
+  const [filteredEmails, setFilteredEmails] = useState(allEmails);
 
-  const toggleView = (view: any) => {
-    setSelectedViews((prev: any) =>
-      prev.includes(view)
-        ? prev.filter((v: any) => v !== view)
-        : [...prev, view],
-    );
+  useEffect(() => {
+    if (selectedViews.length === 0) {
+      setFilteredEmails(allEmails);
+    } else {
+      const filtered = allEmails.filter((email) =>
+        email.view.some((v) => selectedViews.includes(v)),
+      );
+      setFilteredEmails(filtered);
+    }
+  }, [selectedViews]);
+
+  const toggleView = (view: string) => {
+    setSelectedViews((prev) => {
+      const viewCode = viewCodes[view as keyof typeof viewCodes];
+      return prev.includes(viewCode)
+        ? prev.filter((v) => v !== viewCode)
+        : [...prev, viewCode];
+    });
   };
 
-  const openModal = (view: any) => {
+  const openModal = (view: string) => {
     setCurrentView(view);
     setIsModalOpen(true);
   };
@@ -185,7 +150,7 @@ const EmailClient = () => {
           {/* Email list */}
           <div className="w-1/3 bg-white border-r overflow-y-auto">
             <ul>
-              {emails.map((email) => (
+              {filteredEmails.map((email) => (
                 <li
                   key={email.id}
                   className={`p-4 border-b hover:bg-gray-50 cursor-pointer ${
