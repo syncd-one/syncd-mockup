@@ -1,199 +1,133 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import {
-  Mail,
-  Inbox,
-  Send,
-  Star,
-  Trash,
-  Search,
-  Menu,
-  Coffee,
-  X,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import EmailDetail from "@/components/EmailDetails";
-import ViewsSection from "@/components/ViewsSection";
-import ViewSettingsModal from "@/components/ViewSettingsModal";
-import { allEmails, viewCodes } from "@/lib/emails";
+import React, { useState } from "react";
+import { Clock, Coffee, Snowflake, ListChecks, Moon, X } from "lucide-react";
 
-const EmailClient = () => {
-  const [selectedEmail, setSelectedEmail] = useState(allEmails[0]);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [selectedViews, setSelectedViews] = useState<string[]>([]);
+const SaaSLandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentView, setCurrentView] = useState("");
-  const [filteredEmails, setFilteredEmails] = useState(allEmails);
 
-  useEffect(() => {
-    if (selectedViews.length === 0) {
-      setFilteredEmails(allEmails);
-    } else {
-      const filtered = allEmails.filter((email) =>
-        email.view.some((v) => selectedViews.includes(v)),
-      );
-      setFilteredEmails(filtered);
-    }
-  }, [selectedViews]);
-
-  const toggleView = (view: string) => {
-    setSelectedViews((prev) => {
-      const viewCode = viewCodes[view as keyof typeof viewCodes];
-      return prev.includes(viewCode)
-        ? prev.filter((v) => v !== viewCode)
-        : [...prev, viewCode];
-    });
-  };
-
-  const openModal = (view: string) => {
-    setCurrentView(view);
-    setIsModalOpen(true);
-  };
+  const focusModes = [
+    { time: "Morning", rule: "Non-emergency work emails are disabled" },
+    { time: "Work Hours", rule: "Personal emails are turned off" },
+    {
+      time: "Fantasy Football",
+      rule: "Fantasy football emails are disabled until 1 hour before kickoff",
+    },
+  ];
+  const data = [
+    { name: "Group A", value: 300 },
+    { name: "Group B", value: 200 },
+    { name: "Group C", value: 300 },
+    { name: "Group D", value: 200 },
+  ];
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      <ViewSettingsModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        viewName={currentView}
-      />
-      {/* Sidebar */}
-      <div
-        className={`w-64 bg-gray-800 text-white p-4 transition-all duration-300 ease-in-out ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0`}
-      >
-        <div className="flex items-center justify-center mb-8">
-          <div className="p-4">
-            <h1 className="text-2xl font-bold text-purple-600 flex items-center">
-              <Coffee className="mr-2 h-6 w-6" />
-              Syncd
-            </h1>
-          </div>
+    <div className="bg-gray-900 min-h-screen text-white">
+      <nav className="flex justify-between items-center p-4">
+        <div className="text-xl font-bold text-purple-600 flex items-center">
+          <Coffee className="mr-2 h-6 w-6" /> Syncd
         </div>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setMenuOpen(false)}
-          className="md:hidden"
-        >
-          <Menu className="h-6 w-6" />
-        </Button>
-        <Button className="w-full mb-6" size="sm">
-          <Mail className="mr-2 h-4 w-4" /> Compose
-        </Button>
-        <nav>
-          <ul className="space-y-2">
-            <li>
-              <Button variant="ghost" className="w-full justify-start">
-                <Inbox className="mr-2 h-4 w-4" /> Inbox
-              </Button>
-            </li>
-            <li>
-              <Button variant="ghost" className="w-full justify-start">
-                <Send className="mr-2 h-4 w-4" /> Sent
-              </Button>
-            </li>
-            <li>
-              <Button variant="ghost" className="w-full justify-start">
-                <Star className="mr-2 h-4 w-4" /> Important
-              </Button>
-            </li>
-            <li>
-              <Button variant="ghost" className="w-full justify-start">
-                <Trash className="mr-2 h-4 w-4" /> Trash
-              </Button>
-            </li>
-          </ul>
-          {/* Views section */}
-          <ViewsSection
-            openModal={openModal}
-            selectedViews={selectedViews}
-            toggleView={toggleView}
-          />
-        </nav>
-      </div>
+      </nav>
 
-      <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <header className="bg-white border-b p-4 flex justify-between items-center">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden"
+      <main className="container mx-auto text-center mt-20">
+        <h1 className="text-5xl font-bold mb-4">
+          An email UI is worth 1000 words
+        </h1>
+        <p className="text-gray-400 mb-8">
+          {
+            "The only AI email client that understands you don't want to chat with your inbox"
+          }
+        </p>
+        <form action="/demo" method="get">
+          <button
+            type="submit"
+            className="bg-purple-600 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors"
           >
-            <Menu className="h-6 w-6" />
-          </Button>
-          <div className="relative w-full max-w-xl">
-            <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search emails..."
-              className="w-full pl-10 pr-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="text-right hidden md:block">
-              <p className="text-sm font-medium">Prof. John McCarthy</p>
-              <p className="text-xs text-gray-500">CS Department</p>
-            </div>
-            <Avatar className="h-10 w-10">
-              <AvatarImage src="/api/placeholder/40/40" alt="Professor" />
-              <AvatarFallback>JM</AvatarFallback>
-            </Avatar>
-          </div>
-        </header>
+            View Demo
+          </button>
+        </form>
 
-        <div className="flex-1 flex overflow-hidden">
-          {/* Email list */}
-          <div className="w-1/3 bg-white border-r overflow-y-auto">
-            <ul>
-              {filteredEmails.map((email) => (
-                <li
-                  key={email.id}
-                  className={`p-4 border-b hover:bg-gray-50 cursor-pointer ${
-                    email.id === selectedEmail.id ? "bg-blue-50" : ""
-                  }`}
-                  onClick={() => setSelectedEmail(email)}
-                >
-                  <div className="flex items-center space-x-3">
-                    <Avatar>
-                      <AvatarImage src={email.avatar} alt={email.sender} />
-                      <AvatarFallback>{email.sender[0]}</AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between">
-                        <p
-                          className={`truncate font-medium ${
-                            email.unread ? "text-gray-900" : "text-gray-600"
-                          }`}
-                        >
-                          {email.sender}
-                        </p>
-                        <span className="text-xs text-gray-500">10:30 AM</span>
-                      </div>
-                      <h3
-                        className={`text-sm truncate ${
-                          email.unread ? "font-semibold" : "font-normal"
-                        }`}
-                      >
-                        {email.subject}
-                      </h3>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
+        <div className="mt-16 flex justify-center">
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <img src="/ui.png" />
           </div>
-
-          {/* Email content */}
-          <EmailDetail email={selectedEmail} />
         </div>
-      </div>
+      </main>
+      <section className="container mx-auto mt-20 flex justify-between items-center">
+        <div className="w-1/2">
+          <FeatureItem
+            icon={<Snowflake className="text-blue-400" size={40} />}
+            title="A webpage for every email"
+            description="Each interface created to help you get through your inbox faster"
+          />
+          <FeatureItem
+            icon={<ListChecks className="text-purple-400" size={40} />}
+            title="Customize Views"
+            description="Filter, Sort, and Tag your email with natural language instructions"
+          />
+          <FeatureItem
+            icon={<Moon className="text-yellow-400" size={40} />}
+            title="Focus Mode"
+            description="Decide what types of emails are worth a ping and which are not"
+          />
+        </div>
+        <div className="w-1/2 bg-blue-100 rounded-3xl p-8">
+          <div className="bg-blue-100 rounded-3xl p-8 relative h-[400px] flex items-center justify-center">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-gray-800 text-white rounded-full px-6 py-3 font-semibold hover:bg-gray-700 transition-colors flex items-center"
+            >
+              <Moon className="mr-2" size={20} />
+              View Focus Modes
+            </button>
+
+            {isModalOpen && (
+              <div className="absolute inset-0 bg-gray-800 bg-opacity-95 backdrop-blur-sm rounded-3xl p-6 overflow-auto">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-2xl font-bold text-white">Focus Modes</h2>
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="text-gray-400 hover:text-white transition-colors rounded-full p-1 hover:bg-gray-700"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
+                <ul className="space-y-4">
+                  {focusModes.map((mode, index) => (
+                    <li
+                      key={index}
+                      className="bg-gray-700 bg-opacity-50 p-4 rounded-xl border border-gray-600 hover:border-blue-400 transition-colors"
+                    >
+                      <div className="flex items-center mb-2">
+                        <Clock className="text-blue-400 mr-2" size={18} />
+                        <h3 className="font-semibold text-white text-lg">
+                          {mode.time}
+                        </h3>
+                      </div>
+                      <p className="text-sm text-gray-300 ml-6">{mode.rule}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      <footer className="mt-20 pb-10 text-center text-gray-400">
+        <p>&copy; 2024 Syncd. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
 
-export default EmailClient;
+const FeatureItem = ({ icon, title, description }) => (
+  <div className="flex items-start mb-8">
+    <div className="mr-4">{icon}</div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="text-gray-400">{description}</p>
+    </div>
+  </div>
+);
+
+export default SaaSLandingPage;
