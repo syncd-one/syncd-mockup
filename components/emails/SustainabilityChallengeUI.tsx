@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const SustainabilityChallengeUI = () => {
-  const [activeMetric, setActiveMetric] = useState(null);
+  const [activeMetric, setActiveMetric] = useState<string | null>(null);
   const [overallProgress, setOverallProgress] = useState(0);
 
   const metrics = [
@@ -88,7 +88,7 @@ const SustainabilityChallengeUI = () => {
           Campus Sustainability Challenge
         </h2>
         <p className="text-lg text-green-600">
-          Together, we're making a difference!
+          Together, we&apos;re making a difference!
         </p>
       </div>
 
@@ -112,8 +112,7 @@ const SustainabilityChallengeUI = () => {
             </div>
             <Progress
               value={overallProgress}
-              className="h-2 bg-green-200"
-              indicatorClassName="bg-green-500"
+              className="h-2 bg-green-200 [&>div]:bg-green-500"
             />
           </div>
         </CardContent>

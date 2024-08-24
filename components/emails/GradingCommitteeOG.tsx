@@ -62,12 +62,13 @@ const GradingCommitteeOG: React.FC = () => {
         </p>
 
         <p className="mb-4">
-          If you have any questions or concerns, please don't hesitate to reach
-          out.
+          If you have any questions or concerns, please don&apos;t hesitate to
+          reach out.
         </p>
 
         <p className="mb-4">
-          Thank you for your continued dedication to our students' education.
+          Thank you for your continued dedication to our students&apos;
+          education.
         </p>
 
         <p>Best regards,</p>

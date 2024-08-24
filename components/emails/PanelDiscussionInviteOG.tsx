@@ -29,10 +29,10 @@ const PanelDiscussionInviteOG: React.FC = () => {
         <p className="mb-4">
           On behalf of the University of Virginia Media Relations Department, I
           am pleased to invite you to participate as a panelist in our upcoming
-          discussion on "The Role of AI in Shaping the Future of Healthcare."
-          Your expertise in AI ethics and recent work on bias mitigation in
-          healthcare AI systems makes you an ideal contributor to this timely
-          and important conversation.
+          discussion on &ldquo;The Role of AI in Shaping the Future of
+          Healthcare.&ldquo; Your expertise in AI ethics and recent work on bias
+          mitigation in healthcare AI systems makes you an ideal contributor to
+          this timely and important conversation.
         </p>
 
         <p className="mb-4">Event Details:</p>
@@ -69,7 +69,7 @@ const PanelDiscussionInviteOG: React.FC = () => {
         <p className="mb-4">
           The event will be open to the university community and will also be
           live-streamed for the general public. We anticipate significant media
-          coverage, offering an excellent opportunity to showcase UVA's
+          coverage, offering an excellent opportunity to showcase UVA&apos;s
           leadership in this critical field.
         </p>
 
@@ -77,7 +77,8 @@ const PanelDiscussionInviteOG: React.FC = () => {
           If you accept this invitation, our team will provide you with more
           detailed information, including potential discussion topics and
           logistical details. We would also be happy to work with you on any
-          specific points or research you'd like to highlight during the panel.
+          specific points or research you&apos;d like to highlight during the
+          panel.
         </p>
 
         <p className="mb-4">

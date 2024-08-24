@@ -54,15 +54,16 @@ const SustainabilityChallengeOG = () => (
         </li>
       </ul>
       <p>
-        Remember, every small action counts. Whether it's turning off lights,
-        using reusable water bottles, or choosing to bike instead of drive,
-        you're contributing to a more sustainable campus and world.
+        Remember, every small action counts. Whether it&apos;s turning off
+        lights, using reusable water bottles, or choosing to bike instead of
+        drive, you&apos;re contributing to a more sustainable campus and world.
       </p>
       <p>
         To view detailed statistics, track your personal impact, or sign up for
-        events, please click the "View Sustainability Dashboard" button in your
-        email client. If you're viewing this in a standard email client, you can
-        access the dashboard at: https://university.edu/sustainability-challenge
+        events, please click the &lsquo;View Sustainability Dashboard&lsquo;
+        button in your email client. If you&apos;re viewing this in a standard
+        email client, you can access the dashboard at:
+        https://university.edu/sustainability-challenge
       </p>
       <p>
         Thank you for your continued dedication to making our campus more

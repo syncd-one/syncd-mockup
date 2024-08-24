@@ -24,16 +24,16 @@ const MentorshipMeetingOG: React.FC = () => {
         <p className="mb-4">Dear Professor McCarthy,</p>
 
         <p className="mb-4">
-          I hope this email finds you well. My name is Sarah Johnson, and I'm a
-          second-year PhD candidate in the Computer Science department at the
-          University of Virginia. I'm reaching out to request a mentorship
-          meeting with you to discuss my research direction and seek your
-          guidance on some challenges I'm facing in my work on AI ethics and
-          bias in machine learning models.
+          I hope this email finds you well. My name is Sarah Johnson, and
+          I&apos;m a second-year PhD candidate in the Computer Science
+          department at the University of Virginia. I&apos;m reaching out to
+          request a mentorship meeting with you to discuss my research direction
+          and seek your guidance on some challenges I&apos;m facing in my work
+          on AI ethics and bias in machine learning models.
         </p>
 
         <p className="mb-4">
-          I've been following your groundbreaking work in this field,
+          I&apos;ve been following your groundbreaking work in this field,
           particularly your recent publication on mitigating algorithmic bias in
           healthcare applications. Your insights have been instrumental in
           shaping my research questions, and I believe your mentorship would be
@@ -63,8 +63,9 @@ const MentorshipMeetingOG: React.FC = () => {
         <p className="mb-4">
           I understand that your schedule is likely very busy, but I would be
           incredibly grateful for the opportunity to meet with you for 30
-          minutes at your convenience. I'm generally available on Monday and
-          Wednesday afternoons, but I'm happy to accommodate your schedule.
+          minutes at your convenience. I&apos;m generally available on Monday
+          and Wednesday afternoons, but I&apos;m happy to accommodate your
+          schedule.
         </p>
 
         <p className="mb-4">

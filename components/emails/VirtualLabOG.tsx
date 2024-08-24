@@ -38,7 +38,7 @@ const VirtualLabOG = () => (
         <li>Simulate the creation of entangled photon pairs</li>
         <li>Manipulate measurement bases and observe correlations</li>
         <li>Visualize the quantum state using Bloch spheres</li>
-        <li>Test Bell's inequalities and explore quantum non-locality</li>
+        <li>Test Bell&apos;s inequalities and explore quantum non-locality</li>
       </ul>
       <p>Key Features of the Virtual Lab:</p>
       <ul>
@@ -48,15 +48,15 @@ const VirtualLabOG = () => (
         <li>Guided tutorials and challenge modes</li>
       </ul>
       <p>
-        To access the virtual lab, please click on the "Launch Virtual Lab"
-        button in your email client. If you're viewing this in a standard email
-        client, you can access the lab at:
+        To access the virtual lab, please click on the &quot;Launch Virtual
+        Lab&quot; button in your email client. If you&apos;re viewing this in a
+        standard email client, you can access the lab at:
         https://physics.university.edu/virtual-lab/quantum-entanglement
       </p>
       <p>
         Before starting the experiment, please review the provided background
-        material on quantum entanglement and Bell's inequalities. You will be
-        required to complete a short quiz to unlock the full features of the
+        material on quantum entanglement and Bell&apos;s inequalities. You will
+        be required to complete a short quiz to unlock the full features of the
         simulation.
       </p>
       <p>
@@ -67,8 +67,8 @@ const VirtualLabOG = () => (
       </p>
       <p>
         If you encounter any technical issues or have questions about the
-        experiment, please don't hesitate to reach out to our lab support team
-        at lab.support@physics.university.edu.
+        experiment, please don&apos;t hesitate to reach out to our lab support
+        team at lab.support@physics.university.edu.
       </p>
       <p>
         We look forward to seeing your discoveries and insights from this

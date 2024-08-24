@@ -45,14 +45,14 @@ const DeptBudgetMeetingOG: React.FC = () => {
         <ol className="list-decimal pl-5 mb-4">
           <li>Welcome and Introduction (5 minutes)</li>
           <li>
-            Review of Last Year's Budget Performance (20 minutes)
+            Review of Last Year&apos;s Budget Performance (20 minutes)
             <ul className="list-disc pl-5">
               <li>Expenditure breakdown</li>
               <li>Comparison with projections</li>
             </ul>
           </li>
           <li>
-            Presentation of Next Year's Budget Proposal (30 minutes)
+            Presentation of Next Year&apos;s Budget Proposal (30 minutes)
             <ul className="list-disc pl-5">
               <li>Overview of expected funding</li>
               <li>Proposed allocation by category</li>

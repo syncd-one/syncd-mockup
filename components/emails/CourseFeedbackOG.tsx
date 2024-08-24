@@ -37,14 +37,14 @@ const CourseFeedbackOG = () => (
         <li>Student participation rate: 76%</li>
       </ul>
       <p>
-        We've prepared an interactive dashboard where you can explore the
+        We&apos;ve prepared an interactive dashboard where you can explore the
         feedback in more detail. This includes course-specific breakdowns, trend
         analysis, and student comments.
       </p>
       <p>
-        To access the dashboard, please click on the "View Interactive Results"
-        button in your email client. If you're viewing this in a standard email
-        client, you can access the results at:
+        To access the dashboard, please click on the &ldquo;View Interactive
+        Results&ldquo; button in your email client. If you&apos;re viewing this
+        in a standard email client, you can access the results at:
         https://university.edu/feedback-results
       </p>
       <p>

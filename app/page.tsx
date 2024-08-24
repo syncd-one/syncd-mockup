@@ -120,7 +120,8 @@ const SaaSLandingPage = () => {
   );
 };
 
-const FeatureItem = ({ icon, title, description }) => (
+type FeatureItemType = { icon: any; title: any; description: any };
+const FeatureItem = ({ icon, title, description }: FeatureItemType) => (
   <div className="flex items-start mb-8">
     <div className="mr-4">{icon}</div>
     <div>

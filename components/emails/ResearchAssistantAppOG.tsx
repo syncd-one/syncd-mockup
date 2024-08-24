@@ -35,8 +35,9 @@ const ResearchAssistantAppOG: React.FC = () => {
           systems with great interest, and I am particularly fascinated by your
           recent publication on mitigating bias in machine learning models for
           healthcare applications. The intersection of AI and ethics is an area
-          I'm deeply passionate about, and I believe working in your lab would
-          be an invaluable opportunity to contribute to this critical field.
+          I&apos;m deeply passionate about, and I believe working in your lab
+          would be an invaluable opportunity to contribute to this critical
+          field.
         </p>
 
         <p className="mb-4">Here are a few highlights of my qualifications:</p>

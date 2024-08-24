@@ -10,7 +10,10 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 const VirtualLabUI = () => {
   const [entangledState, setEntangledState] = useState({ a: 0, b: 0 });
   const [measurementBasis, setMeasurementBasis] = useState(0);
-  const [measurements, setMeasurements] = useState({ a: null, b: null });
+  const [measurements, setMeasurements] = useState<{
+    a: number | null;
+    b: number | null;
+  }>({ a: null, b: null });
   const [correlation, setCorrelation] = useState(0);
   const [showTutorial, setShowTutorial] = useState(true);
 

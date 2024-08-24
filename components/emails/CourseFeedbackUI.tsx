@@ -24,7 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 const CourseFeedbackUI = () => {
-  const [activeDonutSlice, setActiveDonutSlice] = useState(null);
+  const [activeDonutSlice, setActiveDonutSlice] = useState<number | null>(null);
 
   const overallData = [
     { name: "Very Satisfied", value: 45, color: "#4CAF50" },
@@ -136,22 +136,22 @@ const CourseFeedbackUI = () => {
                 <li>
                   <Badge>Positive</Badge>
                   <p className="mt-1">
-                    "The professor's enthusiasm made complex topics easy to
-                    understand."
+                    &ldquo;The professor&apos;s enthusiasm made complex topics
+                    easy to understand.&ldquo;
                   </p>
                 </li>
                 <li>
                   <Badge variant="secondary">Neutral</Badge>
                   <p className="mt-1">
-                    "Course content was informative, but more real-world
-                    applications would be helpful."
+                    &ldquo;Course content was informative, but more real-world
+                    applications would be helpful.&ldquo;
                   </p>
                 </li>
                 <li>
                   <Badge variant="destructive">Negative</Badge>
                   <p className="mt-1">
-                    "Assignments often felt rushed. More time for completion
-                    would be appreciated."
+                    &ldquo;Assignments often felt rushed. More time for
+                    completion would be appreciated.&ldquo;
                   </p>
                 </li>
               </ul>

@@ -36,7 +36,7 @@ const ResearchProposalOG = () => (
         <li>Budget: $25,000 for equipment and research assistant stipends</li>
       </ul>
       <p>
-        I've attached a detailed proposal document for your review. Your
+        I&apos;ve attached a detailed proposal document for your review. Your
         approval is needed to proceed with the data collection phase.
       </p>
       <p>Thank you for your consideration.</p>

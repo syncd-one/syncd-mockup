@@ -112,7 +112,7 @@ const GradingCommitteeUI = () => {
           <Calendar
             mode="multiple"
             selected={conflicts}
-            onSelect={(date) => date && handleDateSelect(date)}
+            onSelect={(date) => date instanceof Date && handleDateSelect(date)}
             className="rounded-md border"
           />
         </div>
@@ -157,8 +157,7 @@ const GradingCommitteeUI = () => {
           </h3>
           <Progress
             value={66}
-            className="h-2 bg-purple-200"
-            indicatorClassName="bg-purple-600"
+            className="h-2 bg-purple-200 [&>div]:bg-purple-600"
           />
           <p className="text-sm text-purple-600 mt-1">
             4 out of 6 members confirmed

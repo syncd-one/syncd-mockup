@@ -16,7 +16,12 @@ import {
   CheckCircle,
 } from "lucide-react";
 
-const AgendaItem = ({ item, duration, icon: Icon }) => (
+interface AgendaItemProps {
+  item: string;
+  duration: number;
+  icon: React.ElementType;
+}
+const AgendaItem = ({ item, duration, icon: Icon }: AgendaItemProps) => (
   <motion.div
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
@@ -31,7 +36,7 @@ const AgendaItem = ({ item, duration, icon: Icon }) => (
 );
 
 const DeptBudgetMeetingUI = () => {
-  const [attending, setAttending] = useState(null);
+  const [attending, setAttending] = useState<boolean | null>(null);
 
   const agenda = [
     { item: "Welcome and Introduction", duration: 5, icon: Users },
