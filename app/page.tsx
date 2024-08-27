@@ -23,13 +23,9 @@ const SaaSLandingPage = () => {
       </nav>
 
       <main className="container mx-auto text-center mt-20">
-        <h1 className="text-5xl font-bold mb-4">
-          An email UI is worth 1000 words
-        </h1>
+        <h1 className="text-5xl font-bold mb-4">From Mail to Microsite</h1>
         <p className="text-gray-400 mb-8">
-          {
-            "The only AI email client that understands you don't want to chat with your inbox"
-          }
+          Transform emails into actionable, purpose-built UIs
         </p>
         <form action="/demo" method="get">
           <button
