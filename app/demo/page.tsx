@@ -10,6 +10,7 @@ import {
   Menu,
   Coffee,
   X,
+  Moon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -17,6 +18,7 @@ import EmailDetail from "@/components/EmailDetails";
 import ViewsSection from "@/components/ViewsSection";
 import ViewSettingsModal from "@/components/ViewSettingsModal";
 import { allEmails, viewCodes } from "@/lib/emails";
+import FocusMode from "@/components/FocusMode";
 
 const EmailClient = () => {
   const [selectedEmail, setSelectedEmail] = useState(allEmails[0]);
@@ -25,6 +27,14 @@ const EmailClient = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentView, setCurrentView] = useState("");
   const [filteredEmails, setFilteredEmails] = useState(allEmails);
+  const focusModes = [
+    { time: "Morning", rule: "Non-emergency work emails are disabled" },
+    { time: "Work Hours", rule: "Personal emails are turned off" },
+    {
+      time: "Fantasy Football",
+      rule: "Fantasy football emails are disabled until 1 hour before kickoff",
+    },
+  ];
 
   useEffect(() => {
     if (selectedViews.length === 0) {
@@ -64,12 +74,13 @@ const EmailClient = () => {
           menuOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
       >
-        <div className="flex items-center justify-center mb-8">
+        <div className="flex items-center justify-center">
           <div className="p-4">
-            <h1 className="text-2xl font-bold text-purple-600 flex items-center">
+            <h1 className="text-2xl font-bold text-purple-600 flex items-center mb-4">
               <Coffee className="mr-2 h-6 w-6" />
               Syncd
             </h1>
+            <FocusMode />
           </div>
         </div>
         <Button

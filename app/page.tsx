@@ -13,13 +13,6 @@ const SaaSLandingPage = () => {
       rule: "Fantasy football emails are disabled until 1 hour before kickoff",
     },
   ];
-  const data = [
-    { name: "Group A", value: 300 },
-    { name: "Group B", value: 200 },
-    { name: "Group C", value: 300 },
-    { name: "Group D", value: 200 },
-  ];
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   return (
     <div className="bg-gray-900 min-h-screen text-white">

@@ -24,7 +24,7 @@ import PanelDiscussionInviteOG from "./emails/PanelDiscussionInviteOG";
 import PanelDiscussionInviteUI from "./emails/PanelDiscussionInviteUI";
 
 const EmailDetail = ({ email }: { email: any }) => {
-  const [selectedTab, setSelectedTab] = useState("custom");
+  const [selectedTab, setSelectedTab] = useState("original");
 
   const renderCustomInterface = () => {
     switch (email.type) {
@@ -93,7 +93,7 @@ const EmailDetail = ({ email }: { email: any }) => {
       >
         <div className="flex justify-between items-center mb-4">
           <TabsList>
-            <TabsTrigger value="custom">Custom Interface</TabsTrigger>
+            <TabsTrigger value="custom">Generated Page</TabsTrigger>
             <TabsTrigger value="original">Original Email</TabsTrigger>
           </TabsList>
         </div>
