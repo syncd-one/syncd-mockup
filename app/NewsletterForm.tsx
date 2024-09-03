@@ -70,7 +70,7 @@ const NewsletterForm: React.FC = () => {
 
       {status === 'success' && (
         <div>
-          <p className="text-green-600">Thanks! We'll be in touch!</p>
+          <p className="text-green-600">Thanks! We will be in touch!</p>
           <button
             onClick={resetForm}
             className="mt-4 text-blue-500 hover:text-blue-600"
