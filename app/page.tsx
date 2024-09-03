@@ -1,8 +1,10 @@
 "use client";
+
 import React, { useState } from "react";
 import { Clock, Coffee, Snowflake, ListChecks, Moon, X } from "lucide-react";
+import NewsletterForm from "./NewsletterForm";
 
-const SaaSLandingPage = () => {
+const SaaSLandingPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const focusModes = [
@@ -38,10 +40,11 @@ const SaaSLandingPage = () => {
 
         <div className="mt-16 flex justify-center">
           <div className="bg-gray-800 p-4 rounded-lg">
-            <img src="/ui.png" />
+            <img src="/ui.png" alt="UI Preview" />
           </div>
         </div>
       </main>
+
       <section className="container mx-auto mt-20 flex justify-between items-center">
         <div className="w-1/2">
           <FeatureItem
@@ -102,6 +105,11 @@ const SaaSLandingPage = () => {
           </div>
         </div>
       </section>
+      
+      <section className="container mx-auto mt-20 flex justify-center">
+        <NewsletterForm />
+      </section>
+
       <footer className="mt-20 pb-10 text-center text-gray-400">
         <p>&copy; 2024 Syncd. All rights reserved.</p>
       </footer>
@@ -109,8 +117,7 @@ const SaaSLandingPage = () => {
   );
 };
 
-type FeatureItemType = { icon: any; title: any; description: any };
-const FeatureItem = ({ icon, title, description }: FeatureItemType) => (
+const FeatureItem: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
   <div className="flex items-start mb-8">
     <div className="mr-4">{icon}</div>
     <div>
