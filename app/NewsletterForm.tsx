@@ -53,8 +53,7 @@ const NewsletterForm: React.FC = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
             required
-            className="p-2 border border-gray-300 rounded-lg mb-4 w-full"
-          />
+  className="p-2 border border-gray-300 rounded-lg mb-4 w-full text-black placeholder-gray-400"          />
           <button
             type="submit"
             className="bg-purple-600 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors"
