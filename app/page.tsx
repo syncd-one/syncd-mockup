@@ -25,9 +25,9 @@ const SaaSLandingPage: React.FC = () => {
       </nav>
 
       <main className="container mx-auto text-center mt-20">
-        <h1 className="text-5xl font-bold mb-4">From Mail to Microsite</h1>
+        <h1 className="text-5xl font-bold mb-4">Actionable, Purpose-Built Microsites for your Emails</h1>
         <p className="text-gray-400 mb-8">
-          Transform emails into actionable, purpose-built UIs
+          Cut the time spent managing to emails in half
         </p>
         <form action="/demo" method="get">
           <button
