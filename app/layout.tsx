@@ -1,7 +1,7 @@
 import "@/app/globals.css";
 
 export const metadata = {
-  title: "Syncd",
+  title: "Mauv",
   description: "Minimize your time in the inbox",
 };
 
