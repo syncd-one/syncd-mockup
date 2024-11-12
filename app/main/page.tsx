@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Clock, Coffee, Snowflake, ListChecks, Moon, X } from "lucide-react";
-import NewsletterForm from "./NewsletterForm";
+import NewsletterForm from "../NewsletterForm";
 
 const SaaSLandingPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

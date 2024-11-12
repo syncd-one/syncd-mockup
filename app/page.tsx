@@ -17,20 +17,20 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import EmailDetail from "@/components/EmailDetails";
 import ViewsSection from "@/components/ViewsSection";
 import ViewSettingsModal from "@/components/ViewSettingsModal";
-import { allEmails, viewCodes } from "@/lib/emails";
+import { allEmails, viewCodes, Email } from "@/lib/emails";
 import FocusMode from "@/components/FocusMode";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastProvider } from "@/components/ui/toast";
 import { Toaster } from "@/components/ui/toaster";
 
 const EmailClient = () => {
-  const [selectedEmail, setSelectedEmail] = useState(allEmails[0]);
+  const [selectedEmail, setSelectedEmail] = useState<Email>(allEmails[0]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedViews, setSelectedViews] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentView, setCurrentView] = useState("");
-  const [filteredEmails, setFilteredEmails] = useState(allEmails);
-  const [hiddenEmails, setHiddenEmails] = useState<string[]>([]);
+  const [filteredEmails, setFilteredEmails] = useState<Email[]>(allEmails);
+  const [hiddenEmails, setHiddenEmails] = useState<number[]>([]);
   const focusModes = [
     { time: "Morning", rule: "Non-emergency work emails are disabled" },
     { time: "Work Hours", rule: "Personal emails are turned off" },

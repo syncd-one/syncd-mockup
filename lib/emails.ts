@@ -1,3 +1,15 @@
+export interface Email {
+  id: number;
+  subject: string;
+  sender: string;
+  email: string;
+  avatar: string;
+  unread: boolean;
+  selected?: boolean;
+  type: string;
+  view: string[];
+}
+
 export const viewCodes = {
   Courses: "course",
   "Active Research": "research",
@@ -6,7 +18,7 @@ export const viewCodes = {
   "Media and Outreach": "outreach",
 };
 
-export const allEmails = [
+export const allEmails: Email[] = [
   {
     id: 1,
     subject: "Request for Approval: Research Proposal",
